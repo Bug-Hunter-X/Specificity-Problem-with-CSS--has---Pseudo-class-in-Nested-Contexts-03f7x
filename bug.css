@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an uncommon error related to the `:has()` pseudo-class, where the selector's specificity is not working as expected within a nested context:
+
+```css
+.container {
+  background-color: lightgray;
+}
+
+.container :has(> .inner) {
+  background-color: lightblue;
+}
+
+.container > .inner {
+  background-color: lightgreen;
+}
+```
+
+The expected behavior is that the `.container` element with a direct child `.inner` should have a `lightblue` background due to the `:has()` selector, but it only inherits from `.container` and displays `lightgray`. The `lightgreen` background from the direct child is displayed as expected. This occurs because the specificity of `:has()` might be lower than expected in some situations.
