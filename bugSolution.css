@@ -1,0 +1,17 @@
+The solution involves increasing the specificity of the `:has()` selector or using a more direct selector. Here's an improved version:
+
+```css
+.container {
+  background-color: lightgray;
+}
+
+.container:has(> .inner) {
+  background-color: lightblue;
+}
+
+.container > .inner {
+  background-color: lightgreen;
+}
+```
+
+By applying the `:has()` selector to `.container` itself, the specificity issue is resolved. Alternatively, using a more specific selector targeting the parent ensures that the style will have the highest precedence. This revised code correctly applies the intended styling.
